@@ -18,7 +18,7 @@
 <div class="header">
   <h2><a href="/">Watch Party</a></h2>
   {% if room %}
-  <div class="roomData">
+  <div class="roomData" data-room-id="{{ room.id }}">
     <div>Chatting in:</div>
     <h3 class="display">
       <span class="roomName">{{ room['name'] }}</span>
@@ -48,14 +48,14 @@
 <div class="container">
   {% if room %}
   <div class="chat">
-    <div class="comment_box">
+    <div class="comment_box" user-id="{{ user.name }}">
       <form>
         <label for="comment">What do you have to say?</label>
         <textarea name="comment"></textarea>
         <button type="submit" value="Post">Post</button>
       </form>
     </div>
-    <div class="messages">
+    <div class="messages" data-room-id="{{ room.id }}" >
       <message>
         <author>Mr Chatterworth</author>
         <content>Good evening! And how is everyone feeling?</content>
@@ -71,9 +71,9 @@
       <message>
         <author>Chatty Cat</author>
         <content>
-          Meow meow meow meow meow meow meow meow meow meow meow 
-          meow meow meow meow meow meow meow meow meow meow meow 
-          meow meow meow meow meow meow meow meow meow meow meow 
+          Meow meow meow meow meow meow meow meow meow meow meow
+          meow meow meow meow meow meow meow meow meow meow meow
+          meow meow meow meow meow meow meow meow meow meow meow
         </content>
       </message>
       <message>
